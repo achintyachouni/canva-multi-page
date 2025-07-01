@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - Canva Premium</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>Checkout</h1></header>
+  <section class="checkout">
+    <p><strong>Selected Plan:</strong> <span id="plan"></span></p>
+    <p><strong>Price:</strong> ₹<span id="price"></span></p>
+    <form id="checkoutForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="tel" id="mobile" placeholder="Mobile Number" required />
+      <button type="submit">Proceed to Payment</button>
+    </form>
+  </section>
+  <script>
+    document.getElementById("plan").innerText = localStorage.getItem("plan");
+    document.getElementById("price").innerText = localStorage.getItem("price");
+
+    document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      localStorage.setItem("name", document.getElementById("name").value);
+      localStorage.setItem("email", document.getElementById("email").value);
+      localStorage.setItem("mobile", document.getElementById("mobile").value);
+      window.location.href = "payment.html";
+    });
+  </script>
+</body>
+</html>

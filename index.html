@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Canva Premium – Plans</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>Choose Your Canva Premium Plan</h1></header>
+  <section class="plans">
+    <div class="card" onclick="selectPlan('1 Month', 149)">1 Month – ₹149</div>
+    <div class="card" onclick="selectPlan('3 Months', 299)">3 Months – ₹299</div>
+    <div class="card" onclick="selectPlan('6 Months', 499)">6 Months – ₹499</div>
+    <div class="card" onclick="selectPlan('1 Year', 999)">1 Year – ₹999</div>
+  </section>
+  <footer><p>© 2025 Canva Premium Deals</p></footer>
+  <script>
+    function selectPlan(duration, price) {
+      localStorage.setItem('plan', duration);
+      localStorage.setItem('price', price);
+      window.location.href = 'checkout.html';
+    }
+  </script>
+</body>
+</html>

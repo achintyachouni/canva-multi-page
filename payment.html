@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment - Canva Premium</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>Complete Your Payment</h1></header>
+  <section class="payment">
+    <p><strong>Pay ₹<span id="amount"></span> via UPI</strong></p>
+    <p>UPI ID: <strong>achintyachouni95-3@okhdfcbank</strong></p>
+    <img src="qr.png" alt="QR Code" class="qr" />
+    <button onclick="submitOrder()">I Have Paid – Submit Order</button>
+    <p id="msg"></p>
+  </section>
+  <script>
+    document.getElementById("amount").innerText = localStorage.getItem("price");
+
+    function submitOrder() {
+      const data = {
+        name: localStorage.getItem("name"),
+        email: localStorage.getItem("email"),
+        mobile: localStorage.getItem("mobile"),
+        plan: localStorage.getItem("plan")
+      };
+      fetch("https://script.google.com/macros/s/AKfycbxG7AogwoRU5sgXF-YmLdrnUXJMozAlnEiaMQTClllBDvZYKvWdw4B8gXpiMp0r7CUTvw/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
+      })
+      .then(res => res.json())
+      .then(res => {
+        document.getElementById("msg").innerText = "Order received! You’ll be activated in 2–3 hours.";
+        localStorage.clear();
+      })
+      .catch(() => {
+        document.getElementById("msg").innerText = "Something went wrong!";
+      });
+    }
+  </script>
+</body>
+</html>

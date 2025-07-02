@@ -1,27 +1,72 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!-- index.html --><!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Buy Canva Premium – Plans</title>
+  <title>Buy Canva Premium – Best Prices</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header><h1>Choose Your Canva Premium Plan</h1></header>
-  <section class="plans">
+  <header class="hero">
+    <img src="banner.jpg" alt="Canva Premium Banner" class="banner"/>
+    <h1>Unlock Canva Premium at the Best Price</h1>
+    <p>Design like a pro with full access to premium features — without overpaying.</p>
+    <a href="#plans" class="cta-btn">Get Started</a>
+  </header>  <section id="plans" class="plans">
+    <h2>Choose Your Subscription Plan</h2>
     <div class="card" onclick="selectPlan('1 Month', 149)">1 Month – ₹149</div>
     <div class="card" onclick="selectPlan('3 Months', 299)">3 Months – ₹299</div>
     <div class="card" onclick="selectPlan('6 Months', 499)">6 Months – ₹499</div>
-    <div class="card" onclick="selectPlan('1 Year', 999)">1 Year – ₹999</div>
-  </section>
-  <footer><p>© 2025 Canva Premium Deals</p></footer>
-  <script>
+    <div class="card highlight" onclick="selectPlan('1 Year', 999)">1 Year – ₹999 <span class="badge">Best Value</span></div>
+  </section>  <section class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">1️⃣ Select Plan</div>
+      <div class="step">2️⃣ Fill Details</div>
+      <div class="step">3️⃣ Pay Securely</div>
+      <div class="step">4️⃣ Get Access in 2–3 hrs</div>
+    </div>
+  </section>  <section class="why-us">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>✅ Cheapest Canva Premium in India</li>
+      <li>✅ Instant Checkout Process</li>
+      <li>✅ Trusted by 10,000+ customers</li>
+      <li>✅ Email Support & Order Tracking</li>
+    </ul>
+  </section>  <section class="testimonials">
+    <h2>Customer Reviews</h2>
+    <div class="review">
+      <p>"Very professional! Got my Canva Premium within 1 hour. Will buy again!"</p>
+      <strong>– Aisha Mehra</strong>
+    </div>
+    <div class="review">
+      <p>"Best deal online! Everything works perfectly."</p>
+      <strong>– Ravi Kumar</strong>
+    </div>
+  </section>  <section class="faq">
+    <h2>FAQs</h2>
+    <div class="faq-item">
+      <h3>When will I get access?</h3>
+      <p>We activate your account within 2–3 hours after payment.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I use this on mobile?</h3>
+      <p>Yes, Canva Premium works on both Android and iOS devices.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Will I be the owner?</h3>
+      <p>This is a team access setup. You get full Pro features under a team.</p>
+    </div>
+  </section>  <section class="contact">
+    <h2>Need Help?</h2>
+    <p>Email us at: <a href="mailto:canvateamhelp@gmail.com">canvateamhelp@gmail.com</a></p>
+  </section>  <footer>
+    <p>© 2025 Canva Subscription Store. All rights reserved.</p>
+  </footer>  <script>
     function selectPlan(duration, price) {
       localStorage.setItem('plan', duration);
       localStorage.setItem('price', price);
       window.location.href = 'checkout.html';
     }
-  </script>
-</body>
+  </script></body>
 </html>
